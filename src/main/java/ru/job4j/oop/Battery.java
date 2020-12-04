@@ -10,8 +10,8 @@ public class Battery {
     }
 
     public void exchange(Battery another) {
-        this.load = this.load + another.load;
-        another.load = 0;
+       another.load = another.load + this.load;
+        this.load = 0;
     }
 
     public static void main(String[] args) {
@@ -21,7 +21,6 @@ public class Battery {
         nokia.exchange(samsung);
         System.out.println("nokia " + nokia.load + " samsung " + samsung.load);
         samsung.exchange(nokia);
-        System.out.println(" samsung " + samsung.load + " nokia " + nokia.load);
         System.out.println(" samsung " + samsung.load + " nokia " + nokia.load);
     }
 }
