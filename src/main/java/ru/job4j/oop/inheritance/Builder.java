@@ -1,23 +1,18 @@
 package ru.job4j.oop.inheritance;
 
 public class Builder extends Engineer {
-    public Draw drawing(Sheet sheet) {
-        return null;
+    private String tools;
+
+    public Builder(String n, String sn, String bd, String e) {
+        super(n, sn, bd, e);
     }
 
-    class Draw{
-        private String pencil;
-
-        public String getPencil() {
-            return pencil;
-        }
+    public Builder(String n, String sn, String bd, String e, String t) {
+        super(n, sn, bd, e);
+        this.tools = t;
     }
 
-    class Sheet{
-        private String table;
-
-        public String getTable(){
-            return table;
-        }
+    public String getTools() {
+        return tools;
     }
 }

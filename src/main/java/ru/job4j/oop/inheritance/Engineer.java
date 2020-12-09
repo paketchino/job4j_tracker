@@ -1,23 +1,22 @@
 package ru.job4j.oop.inheritance;
 
 public class Engineer extends Profession {
-    public Lean material(Text text){
-        return null;
+    private String logicalThinking;
+
+    public Engineer(String n, String sn, String bd, String e){
+        super(n, sn, bd, e);
     }
 
-    class Lean{
-        private String book;
-
-        public String getBook() {
-            return book;
-        }
+    public Engineer(String n, String sn, String bd, String e, String lt){
+        super(n, sn, bd, e);
+        this.logicalThinking = lt;
+    }
+    public String getLogicalThinking() {
+        return logicalThinking;
     }
 
-    class Text{
-        private String text;
-
-        public String getText() {
-            return text;
-        }
+    @Override
+    public String getName() {
+        return super.getName();
     }
 }

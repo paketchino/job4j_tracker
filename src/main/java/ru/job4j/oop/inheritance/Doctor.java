@@ -1,28 +1,22 @@
 package ru.job4j.oop.inheritance;
 
 public class Doctor extends Profession {
-    public Diagnose heal(Pacient pacient) {
+    private String diagnose;
+
+    public Doctor (String n, String sn, String bd, String e) {
+        super(n, sn, bd, e);
+    }
+
+    public Doctor (String n, String sn, String bd, String e, String d) {
+        super(n, sn, bd, e);
+        this.diagnose = d;
+    }
+    public String getDiagnose(){
         return null;
     }
 
-    class Diagnose {
-        private String disease;
-
-        public String getDisease() {
-            return disease;
-        }
-    }
-
-    class Pacient{
-        private String name;
-        private String symptoms;
-
-        public String getName() {
-            return name;
-        }
-
-        public String getSymptoms(){
-            return symptoms;
-        }
+    @Override
+    public String getName() {
+        return super.getName();
     }
 }
