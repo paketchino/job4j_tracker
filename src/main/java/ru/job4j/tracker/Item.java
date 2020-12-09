@@ -6,6 +6,13 @@ public class Item {
     private int id;
     private String name;
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     public Item() {
         System.out.println();
