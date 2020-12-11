@@ -9,6 +9,7 @@ public class College {
         student.setName("Roman");
         student.setReceipt(new Date());
 
+
         System.out.println(student.getGroup() + " " + student.getName() + " " + student.getReceipt());
     }
 }
