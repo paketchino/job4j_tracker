@@ -28,13 +28,33 @@ public class Tracker {
         return Arrays.copyOf(items, size);
     }
 
+    /**
+     * Создать результирующий массив где будут храниться ячейки
+     * newSize = счетчик который будет перемещаться по результирующему массиву
+     * @param key
+     * @return
+     */
     public Item[] findByName(String key) {
+        Item[] rsl = items;
+        int newSize = 0;
         for (int i = 0; i < size; i++) {
             if (key.equals(items[i].getName())) {
-                // Не понимаю что тут писать
+                rsl[newSize] = items[i];
+                newSize++;
             }
         }
-        return Arrays.copyOf(items, size);
+        return Arrays.copyOf(rsl, newSize);
     }
 
-}
+    public Item findById(int id) {
+        Item rsl = null;
+        for (int i = 0; i < size; i++) {
+            Item item = items[i];
+            if (item.getId() == id) {
+                rsl = item;
+                break;
+            }
+        }
+        return rsl;
+    }
+    }
