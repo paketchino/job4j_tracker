@@ -3,20 +3,27 @@ package ru.job4j.io;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Matchers {
+ public class Matchers {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         int matchers = 11;
         boolean rsl = matchers > 1;
-        Scanner input = new Scanner(System.in);
-        System.out.println("Количество спичек " + matchers);
         while (rsl) {
-            matchers = matchers - Integer.valueOf(input.nextLine());
+            System.out.println("Количество спичек: " + matchers);
+            int firstPlayer = Integer.valueOf(input.nextLine());
+            matchers =- firstPlayer;
+            System.out.println("Matchers left" + matchers);
             if (matchers < 1) {
-                System.out.println(matchers + " Не осталось");
-                rsl = false;
+                System.out.println("First player win" + firstPlayer);
+                break;
             }
-            System.out.println("На столе " + matchers + "спичкек");
+            int secondPlayer = Integer.valueOf(input.nextLine());
+            matchers =- secondPlayer;
+            System.out.println("Matchers left " + matchers);
+            if (matchers < 1) {
+                System.out.println("Second player win " + secondPlayer);
+                break;
+            }
         }
-        System.out.println("Вы выйграли!");
     }
 }
