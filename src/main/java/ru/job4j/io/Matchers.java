@@ -8,8 +8,9 @@ import java.util.Scanner;
          boolean player = true;
          Scanner input = new Scanner(System.in);
          int matches = 11;
+         boolean rsl = matches > 0;
          System.out.println("Добро пожаловать в игру " + matches + " спичек");
-         while (matches > 0) {
+         while (rsl) {
              String name = player ? "Player First" : "Player Second";
              System.out.println(name + " выберите количество спичек от 1 до 3");
              int count = Integer.valueOf(input.nextLine());
@@ -20,6 +21,7 @@ import java.util.Scanner;
              }
              if (matches == 0) {
                  System.out.println("Выйграл игрок " + name);
+                 break;
              }
          }
      }
