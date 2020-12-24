@@ -70,13 +70,12 @@ public class Tracker {
      * @param item - заявку которую нужно заменить
      * @return возвращает заявку
      */
+
     public boolean replace(int id, Item item) {
-        boolean rsl = false;
         int index = indexOf(id);
-        if (index != -1) {
-            item.setId(id);
+        boolean rsl = index != 1;
+        if (rsl) {
             items[index] = item;
-            rsl = true;
         }
         return rsl;
     }
@@ -88,16 +87,15 @@ public class Tracker {
      * @return
      */
     public boolean deleted(int id) {
-        boolean rsl = false;
         int index = indexOf(id);
+        boolean rsl = index != -1;
         int start = index + 1;
         int distPos = index;
         int length = size - index;
-        if (index != -1) {
+        if (rsl) {
             System.arraycopy(items, start, items, distPos, length);
             items[size - 1] = null;
             size--;
-            rsl = true;
         }
         return rsl;
     }
