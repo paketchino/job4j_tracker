@@ -8,21 +8,24 @@ import java.util.Scanner;
          boolean player = true;
          Scanner input = new Scanner(System.in);
          int matches = 11;
-         boolean rsl = matches > 0;
-         System.out.println("Добро пожаловать в игру " + matches + " спичек");
-         while (rsl) {
-             String name = player ? "Player First" : "Player Second";
-             System.out.println(name + " выберите количество спичек от 1 до 3");
-             int count = Integer.valueOf(input.nextLine());
-             matches -= count;
-             if (matches > 0) {
-                 player = !player;
-                 System.out.println("На столе осталось " + matches);
-             }
-             if (matches == 0) {
-                 System.out.println("Выйграл игрок " + name);
+         System.out.println("You play in the game 11");
+         while (matches > 0) {
+             String name = player ? "First Player" : "Second Player";
+             System.out.println("Enter a number from 1 to 3: " + name);
+             int select = Integer.valueOf(input.nextLine());
+             if (select < 1 || select > 3) {
+                 System.out.println("You enter error number");
                  break;
+             } else {
+                 matches -= select;
+             }
+             System.out.println("Matches " + matches + " on the table");
+             player = !player;
+             if (matches < 1) {
+                 System.out.println(name + " win");
+                 break;
+                 }
              }
          }
      }
- }
+
