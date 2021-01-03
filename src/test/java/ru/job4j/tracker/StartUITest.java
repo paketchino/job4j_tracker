@@ -11,39 +11,47 @@ public class StartUITest {
 
     @Test
     public void whenAddItem() {
-        String[] answers = {"Fix PC"};
-        Input input = new StubInput(answers);
+        Input in = new StubInput(
+                new String[] {"0", "Item name", "1"}
+        );
         Tracker tracker = new Tracker();
-        StartUI.createItem(input, tracker);
-        Item created = tracker.findAll()[0];
-        Item expected = new Item("Fix PC");
-        assertThat(created.getName(), is(expected.getName()));
+        UserAction[] actions = {
+                new CreateAction(),
+                new Exit()
+        };
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
 
     @Test
     public void whenNeedDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("delete Item");
-        tracker.add(item);
-        String[] answer = {String.valueOf(item.getId()),
-                "delete Item"
+        Item item = tracker.add(new Item("Deleted Item"));
+        Input in = new StubInput(
+                new String[]{"0", String.valueOf(item.getId()), "1"}
+        );
+        UserAction[] actions = {
+                new DeleteAction(),
+                new Exit()
         };
-        Input input = new StubInput(answer);
-        StartUI.deleteItem(input, tracker);
+        new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
     @Test
     public void whenNeedReplaceItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("new Item");
-        tracker.add(item);
-        String [] answer = {
-                String.valueOf(item.getId()),
-                "replaced Item"
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item("Replaced Item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        String replaceName = "New item name";
+        Input in = new StubInput(
+                new String[]{"0",String.valueOf(item.getId()),"New item name", "1"}
+        );
+        UserAction[] actions = {
+                new ReplaceAction(),
+                new Exit()
         };
-        StartUI.replaceItem(new StubInput(answer), tracker);
-        Item replaced = tracker.findById(item.getId());
-        assertThat(replaced.getName(), is("replaced Item"));
+        new StartUI().init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()).getName(), is(replaceName));
     }
-
 }
