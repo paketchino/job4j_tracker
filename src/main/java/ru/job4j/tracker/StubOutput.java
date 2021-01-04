@@ -6,9 +6,9 @@ public class StubOutput implements Output {
     @Override
     public void println(Object obj) {
         if (obj != null) {
-            System.out.println(obj.toString());
+            buffer.append(obj.toString());
         } else {
-            System.out.println("null");
+            buffer.append("null");
         }
         buffer.append(System.lineSeparator());
     }

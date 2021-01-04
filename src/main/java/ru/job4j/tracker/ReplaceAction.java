@@ -19,9 +19,9 @@ public class ReplaceAction implements UserAction {
         Item newItem = new Item(name);
         boolean rsl = tracker.replace(id, newItem);
         if (rsl) {
-            System.out.println("Replace complete");
+            out.println("Replace complete");
         } else {
-            System.out.println("Not complete");
+            out.println("Not complete");
         }
         return true;
     }
