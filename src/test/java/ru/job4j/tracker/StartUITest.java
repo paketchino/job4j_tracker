@@ -81,7 +81,7 @@ public class StartUITest {
     public void WhenFindAll() {
         Output output = new StubOutput();
         Input in = new StubInput(
-                new String[]{"0", "1"}
+                new String[]{"0", "1", "2", "3", "4","5", "6"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
