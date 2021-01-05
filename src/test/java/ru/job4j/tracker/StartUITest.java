@@ -9,6 +9,31 @@ import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.nullValue;
 
 public class StartUITest {
+    @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId()),
+                "replaced item"};
+        Input input = new StubInput(answers);
+        StartUI.replaceItem(input, tracker);
+        Item replaced = tracker.findById(item.getId());
+        assertThat(replaced.getName(), is("replaced item"));
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("delete Item");
+        tracker.add(item);
+        String[] answer = {String.valueOf(item.getId()),
+                "delete Item"
+        };
+        Input input = new StubInput(answer);
+        StartUI.deleteItem(input, tracker);
+        assertThat(tracker.findById(item.getId()), is(nullValue()));
+    }
 
     @Test
     public void whenAddItem() {
@@ -81,7 +106,7 @@ public class StartUITest {
     public void WhenFindAll() {
         Output output = new StubOutput();
         Input in = new StubInput(
-                new String[]{"0", "1", "2", "3", "4","5", "6"}
+                new String[]{"0", "1"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
@@ -91,13 +116,8 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(output.toString(), is(
                 "Menu." + System.lineSeparator() +
-                "1. Find All Action" + System.lineSeparator() +
-                 "2. CreateAction " + System.lineSeparator() +
-                 "3. ReplaceAction " + System.lineSeparator() +
-                 "4. Delete Action " + System.lineSeparator() +
-                 "5. Find Id Action " + System.lineSeparator() +
-                 "6. FindNameAction "  + System.lineSeparator() +
-                 "0. Exit " + System.lineSeparator()
+                "0. Find All Action" + System.lineSeparator() +
+                 "1. Exit " + System.lineSeparator()
         ));
     }
 }
