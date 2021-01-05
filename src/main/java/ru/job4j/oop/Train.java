@@ -7,8 +7,8 @@ public class Train implements Vehicle {
     }
 
     @Override
-    public void wheel(int wheel) {
-        wheel = 0;
-        System.out.println(getClass().getSimpleName() + " не имеет колес");
+    public void wheel() {
+       int wheel = 0;
+        System.out.println(getClass().getSimpleName() + " не имеет колес" + wheel);
     }
 }
