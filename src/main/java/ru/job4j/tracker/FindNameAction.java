@@ -8,7 +8,7 @@ public class FindNameAction implements UserAction {
     }
     @Override
     public String name() {
-        return "=== Find Name Action ===";
+        return "Find Name Action";
     }
 
     @Override

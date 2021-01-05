@@ -13,7 +13,7 @@ public class StubOutput implements Output {
         buffer.append(System.lineSeparator());
     }
 
-    public String toSting() {
+    public String toString() {
         return buffer.toString();
     }
 }
