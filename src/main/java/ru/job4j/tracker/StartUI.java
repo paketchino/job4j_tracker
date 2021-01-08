@@ -9,12 +9,20 @@ public class StartUI {
     }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
-        boolean run = true;
-        while (run) {
-            this.showMenu(actions);
-            int select = input.askInt("Select: ");
-            UserAction action = actions[select];
-            run = action.execute(input, tracker);
+        try {
+            boolean run = true;
+            while (run) {
+                this.showMenu(actions);
+                int select = input.askInt("Select: ");
+                if (select < 0 || select <= actions.length) {
+                    out.println("Wrong input, you can select: 0 .. " + (actions.length - 1));
+                    continue;
+                }
+                UserAction action = actions[select];
+                run = action.execute(input, tracker);
+            }
+        } catch (ArrayIndexOutOfBoundsException abe) {
+            System.out.println("Wrong input enter number 0 to 6");
         }
     }
 
@@ -26,19 +34,25 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Output output = new ConsoleOutput();
-        Input input = new ConsoleInput();
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction(output),
-                new FindAllAction(output),
-                new ReplaceAction(output),
-                new DeleteAction(output),
-                new FindIdAction(output),
-                new FindNameAction(output),
-                new Exit(output)
-        };
-        new StartUI(output).init(input, tracker, actions);
+        try {
+            Output output = new ConsoleOutput();
+            Input input = new ValidateInput();
+            Tracker tracker = new Tracker();
+            UserAction[] actions = {
+                    new CreateAction(output),
+                    new FindAllAction(output),
+                    new ReplaceAction(output),
+                    new DeleteAction(output),
+                    new FindIdAction(output),
+                    new FindNameAction(output),
+                    new Exit(output)
+            };
+            new StartUI(output).init(input, tracker, actions);
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException abe) {
+            abe.printStackTrace();
+        }
     }
 }
 
