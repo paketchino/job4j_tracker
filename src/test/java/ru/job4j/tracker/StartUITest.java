@@ -105,7 +105,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find Name Action"));
         Input in = new StubInput(
-                new String[] {"0",String.valueOf(item.getName()),"1"}
+                new String[] {"0",String.valueOf(item.getId()),"1"}
         );
         UserAction[] actions = {
                 new FindNameAction(output),
@@ -145,5 +145,54 @@ public class StartUITest {
                         + "1. Exit" + System.lineSeparator()
         ));
         }
+        @Test
+    public void whenInvalidExit() {
+        Output output = new StubOutput();
+        Input input = new StubInput(
+                new String[] {"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+            new Exit(output)
+            };
+        new StartUI(output).init(input, tracker,actions);
+        assertThat(output.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. Exit%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                )
+        ));
 
+        }
+    @Test
+    public void whenInvalidAdd() {
+        Output output = new StubOutput();
+        Input input = new StubInput(
+                new String[]{"0", "1"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+            new Exit(output),
+            new FindAllAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        assertThat(output.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. Exit%n"
+                                + "1. Show All Action%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                                + "1. Show All Action%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                                + "1. Show All Action%n"
+                )
+        ));
+    }
     }
