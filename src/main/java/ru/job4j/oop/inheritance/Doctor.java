@@ -7,9 +7,9 @@ public class Doctor extends Profession {
         super(n, sn, bd, e);
     }
 
-    public Doctor (String n, String sn, String bd, String e, String d) {
+    public Doctor (String n, String sn, String bd, String e, String diagnose) {
         super(n, sn, bd, e);
-        this.diagnose = d;
+        this.diagnose = diagnose;
     }
     public String getDiagnose(){
         return null;

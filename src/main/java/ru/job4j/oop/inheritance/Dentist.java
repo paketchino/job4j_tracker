@@ -7,9 +7,9 @@ public class Dentist extends Doctor {
         super(n, sn, bd, e, d);
     }
 
-    public Dentist (String n, String sn, String bd, String e, String d, String th) {
+    public Dentist (String n, String sn, String bd, String e, String d, String teeth) {
         super(n, sn, bd, e, d);
-        this.teeth = th;
+        this.teeth = teeth;
     }
 
     public String getTeeth() {

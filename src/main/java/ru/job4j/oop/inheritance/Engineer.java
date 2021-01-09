@@ -7,7 +7,7 @@ public class Engineer extends Profession {
         super(n, sn, bd, e);
     }
 
-    public Engineer(String n, String sn, String bd, String e, String lt){
+    public Engineer(String n, String sn, String bd, String e, String lt, String logicalThinking){
         super(n, sn, bd, e);
         this.logicalThinking = lt;
     }

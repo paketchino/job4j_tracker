@@ -1,7 +1,7 @@
 package ru.job4j.oop.inheritance;
 
 
-public class Programmer extends Engineer {
+public class Programmer  {
     public Write canWriteHardcod(Array number){
         return null;
     }

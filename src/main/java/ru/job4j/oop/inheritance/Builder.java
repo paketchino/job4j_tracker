@@ -7,9 +7,9 @@ public class Builder extends Engineer {
         super(n, sn, bd, e);
     }
 
-    public Builder(String n, String sn, String bd, String e, String t) {
+    public Builder(String n, String sn, String bd, String e, String t, String tools) {
         super(n, sn, bd, e);
-        this.tools = t;
+        this.tools = tools;
     }
 
     public String getTools() {
