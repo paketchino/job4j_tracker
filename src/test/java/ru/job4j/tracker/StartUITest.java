@@ -14,7 +14,7 @@ public class StartUITest {
     public void whenAddItem() {
         Output output = new ConsoleOutput();
         Input in = new StubInput(
-                new String[]{"10", "Item name", "10", "0"}
+                new String[]{"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Item name"));
@@ -32,7 +32,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted Item"));
         Input in = new StubInput(
-                new String[]{"10", String.valueOf(item.getId()), "10", "0"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new DeleteAction(output),
@@ -51,7 +51,7 @@ public class StartUITest {
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         String replaceName = "New item name";
         Input in = new StubInput(
-                new String[]{"10", String.valueOf(item.getId()), "New item name", "10", "0"}
+                new String[]{"0", String.valueOf(item.getId()), "New item name", "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(output),
@@ -74,19 +74,16 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
-                        "0. Exit" + System.lineSeparator()+
-                        "Wrong input, you can select: 0 .. 0" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
                         "0. Exit" + System.lineSeparator()
         ));
     }
 
     @Test
-    public void WhenFindAll() {
+    public void whenFindAll() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Input in = new StubInput(
-                new String[]{"10", "10", "0"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = {
                 new FindAllAction(output),
@@ -95,6 +92,9 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(output.toString(), is(
                 "Menu." + System.lineSeparator()
+                        + "0. Show All Action" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
                         + "0. Show All Action" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
 
@@ -107,7 +107,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find Name Action"));
         Input in = new StubInput(
-                new String[]{"10", String.valueOf(item.getId()), "10", "0"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new FindNameAction(output),
@@ -116,6 +116,10 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(output.toString(), is(
                 "Menu." + System.lineSeparator()
+                        + "0. Find Name Action" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Item with name not found" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
                         + "0. Find Name Action" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
         ));
@@ -127,7 +131,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find Id Action"));
         Input in = new StubInput(
-                new String[]{"10", String.valueOf(item.getId()), "10", "0"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new FindIdAction(output),
@@ -136,6 +140,9 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(output.toString(), is(
                 "Menu." + System.lineSeparator()
+                        + "0. Find Id Action" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
                         + "0. Find Id Action" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
         ));
@@ -242,15 +249,21 @@ public class StartUITest {
         assertThat(output.toString(), is(
                 String.format("Menu.%n"
                         + "0. Exit%n"
-                         + "1. === Edit Items ===%n")
+                        + "1. === Edit Items ===%n"
+                        + "Wrong input, you can select: 0 .. 1%n"
+                        + "Menu.%n"
+                        + "0. Exit%n"
+                        + "1. === Edit Items ===%n"
+                )
         ));
     }
     @Test
     public void whenInvalidShow() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("ShowAll"));
         Input input = new StubInput(
-                new String[]{"10", "10", "0"}
+                new String[]{"10",String.valueOf(item.getId()), "10", "0"}
         );
         UserAction[] actions = {
                 new Exit(output),
@@ -262,6 +275,14 @@ public class StartUITest {
                         "Menu.%n"
                                 + "0. Exit%n"
                                 + "1. Show All Action%n"
+                        + "Wrong input, you can select: 0 .. 1%n"
+                        + "Menu.%n"
+                        + "0. Exit%n"
+                        + "1. Show All Action%n"
+                        + "Wrong input, you can select: 0 .. 1%n"
+                        + "Menu.%n"
+                        + "0. Exit%n"
+                        + "1. Show All Action%n"
                 )
         ));
     }
@@ -281,6 +302,14 @@ public class StartUITest {
         assertThat(output.toString(), is(
                 String.format(
                         "Menu.%n"
+                        + "0. Exit%n"
+                        + "1. === Delete Item ===%n"
+                        + "Wrong input, you can select: 0 .. 1%n"
+                        + "Menu.%n"
+                                + "0. Exit%n"
+                        + "1. === Delete Item ===%n"
+                        + "Not successful%n"
+                                + "Menu.%n"
                                 + "0. Exit%n"
                         + "1. === Delete Item ===%n"
                 )
