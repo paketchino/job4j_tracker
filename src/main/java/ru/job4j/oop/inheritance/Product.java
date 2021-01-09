@@ -1,6 +1,6 @@
 package ru.job4j.oop.inheritance;
 
-//ff
+//2
 
 public final class Product {
     private String name;

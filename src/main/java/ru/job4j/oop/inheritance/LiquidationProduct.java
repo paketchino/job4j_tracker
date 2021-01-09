@@ -4,7 +4,7 @@ public final class LiquidationProduct  {
     private Product product;
 
     public LiquidationProduct(String name, int price) {
-     return;
+        product = new Product(name, price);
     }
 
     public int discount() {
