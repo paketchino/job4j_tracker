@@ -4,16 +4,15 @@ public final class LiquidationProduct  {
     private Product product;
 
     public LiquidationProduct(String name, int price) {
-        super(name, price);
+     return;
     }
 
-    @Override
     public int discount() {
         return 90;
     }
 
-    @Override
+
     public String label() {
-        return name + " " + price();
+        return null;
     }
 }

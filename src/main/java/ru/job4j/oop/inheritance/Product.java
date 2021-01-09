@@ -1,5 +1,7 @@
 package ru.job4j.oop.inheritance;
 
+//ff
+
 public final class Product {
     private String name;
     private int price;
@@ -20,4 +22,5 @@ public final class Product {
     public String label() {
         return name + " " + price();
     }
+
 }
