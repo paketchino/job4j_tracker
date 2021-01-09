@@ -20,3 +20,4 @@ public class Doctor extends Profession {
         return super.getName();
     }
 }
+//2

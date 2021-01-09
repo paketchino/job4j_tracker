@@ -1,24 +1,14 @@
 package ru.job4j.oop.inheritance;
 
 
-public class Programmer  {
-    public Write canWriteHardcod(Array number){
-        return null;
+public class Programmer extends Engineer {
+    private String writeCod;
+
+    public Programmer (String n, String sn, String bd, String e) {
+        super(n, sn, bd, e);
     }
-
-    class Write{
-        private int variable;
-
-        public int getVariable() {
-            return variable;
-        }
-    }
-
-    class Array{
-        private boolean Length;
-
-        public boolean getArrayLength() {
-            return Length;
-        }
+    public Programmer(String n, String sn, String bd, String e, String writeCod) {
+        super(n, sn, bd, e);
+        this.writeCod = writeCod;
     }
 }
