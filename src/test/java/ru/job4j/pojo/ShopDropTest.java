@@ -1,6 +1,7 @@
 package ru.job4j.pojo;
 
 import org.junit.Test;
+import ru.job4j.oop.inheritance.Product;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.*;

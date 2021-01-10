@@ -1,4 +1,5 @@
 package ru.job4j.pojo;
+import ru.job4j.oop.inheritance.Product;
 
 public class ShopDrop {
     public static Product[] leftShift(Product[] products, int index) {
