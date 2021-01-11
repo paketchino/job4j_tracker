@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.StringJoiner;
 
 public class Item {
 
@@ -38,5 +39,13 @@ public class Item {
     }
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", " , Item.class.getSimpleName() + "[" , "]")
+                .add("id= " + id)
+                .add("name=' " + name + "'")
+                .toString();
     }
 }

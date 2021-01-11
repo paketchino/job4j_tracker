@@ -88,13 +88,14 @@ public class StartUITest {
         };
         new StartUI(output).init(in, tracker, actions);
         assertThat(output.toString(), is(
-                String.format("Menu.%n"
-                        + "0. Find Id Action%n"
-                        + "1. Exit%n"
-                        + "Menu.%n"
-                        + "0. Find Id Action%n"
-                        + "1. Exit%n"
+                          "Menu." + System.lineSeparator()
+                        + "0. Find Id Action" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                                  + item + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find Id Action" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
                 )
-                ));
+                );
     }
     }
