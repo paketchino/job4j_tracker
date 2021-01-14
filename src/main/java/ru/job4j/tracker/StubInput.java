@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+//2
 public class StubInput implements Input {
     private String[] answer;
     private int position = 0;
