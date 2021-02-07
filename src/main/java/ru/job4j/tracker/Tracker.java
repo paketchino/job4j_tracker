@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public final class Tracker {
-
     private static Tracker instance = null;
 
     private final List<Item> items = new ArrayList<>(100);
@@ -65,14 +64,14 @@ public final class Tracker {
         /* Находим индекс */
         int index = indexOf(id);
         /* Если индекс найден возвращаем item, иначе null */
-        return index != -1 ? items : -1;
+        return index != -1 ? items.get(index) : null;
     }
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int i = 0; i < size; i++) {
-            if (items[i].getId() == id) {
-                rsl = i;
+        for (int index = 0; index < size; index++) {
+            if (items.get(index).getId() == id) {
+                rsl = index;
                 break;
             }
         }
@@ -89,8 +88,8 @@ public final class Tracker {
         int index = indexOf(id);
         boolean rsl = index != 1;
         if (rsl) {
-           item.setId(id);
-            items[index] = item;
+            item.setId(id);
+            items.get(index);
         }
         return rsl;
     }
@@ -109,7 +108,7 @@ public final class Tracker {
         int length = size - index;
         if (rsl) {
             System.arraycopy(items, start, items, distPos, length);
-            items[size - 1] = null;
+            items.set(size - 1, null);
             size--;
         }
         return rsl;
