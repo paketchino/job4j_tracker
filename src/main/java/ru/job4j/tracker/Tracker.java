@@ -1,17 +1,19 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+import java.util.ArrayList.*;
 import java.util.Arrays;
+import java.util.List;
 
 public final class Tracker {
 
     private static Tracker instance = null;
 
-    private final Item[] items = new Item[100];
+    private final List<Item> items = new ArrayList<>(100);
     private int ids = 1;
     private int size = 0;
 
     private Tracker() {
-
     }
 
     public static Tracker getInstance() {
@@ -27,8 +29,9 @@ public final class Tracker {
          * через setId проставляется ключ
          * ids используется для регенерации нового ключа
          */
+        int index = 0;
         item.setId(ids++);
-        items[size++] = item;
+        items.set(size++, items.get(index));
         return item;
     }
 
@@ -37,8 +40,8 @@ public final class Tracker {
      *
      * @return
      */
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
+    public List<Item> findAll() {
+        return items;
     }
 
     /**
@@ -48,23 +51,21 @@ public final class Tracker {
      * @param key
      * @return
      */
-    public Item[] findByName(String key) {
-        Item[] rsl = items;
-        int newSize = 0;
-        for (int i = 0; i < size; i++) {
-            if (key.equals(items[i].getName())) {
-                rsl[newSize] = items[i];
-                newSize++;
+    public List<Item> findByName(String key) {
+        List<Item> rsl = items;
+       for (Item item : items) {
+            if (key.contains(item.getName())) {
+                rsl.add(item);
             }
         }
-        return Arrays.copyOf(rsl, newSize);
+        return rsl;
     }
 
     public Item findById(int id) {
         /* Находим индекс */
         int index = indexOf(id);
         /* Если индекс найден возвращаем item, иначе null */
-        return index != -1 ? items[index] : null;
+        return index != -1 ? items : -1;
     }
 
     private int indexOf(int id) {
