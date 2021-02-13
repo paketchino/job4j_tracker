@@ -11,23 +11,41 @@ public class BankService {
 
     public void add(User user) {
         List<Account> accounts = new ArrayList<>();
-        if (!users.containsKey(user)) {
-            users.put(user, accounts);
+            users.putIfAbsent(user, accounts);
+        }
+
+    public void addAccount(String passport, Account account) {
+        User userPassport = findByPassport(passport);
+        if (userPassport != null) {
+            List<Account> userAccount = users.get(userPassport);
+            if (!userAccount.contains(account)) {
+                userAccount.add(account);
+            }
         }
     }
 
-    public void addAccount(String passport, String account) {
-
-    }
-
-    public void findByPassport(String passport) {
+    public User findByPassport(String passport) {
+        User user = null;
         for (User key : users.keySet()) {
-            List value = users.get(key);
+            if (key.equals(passport)) {
+                user = key;
+                break;
+            }
+
         }
-        return ;
+        return user;
     }
 
-
-
+    public Account findByRequisite(String passport, String requisite) {
+        Account account = null;
+        User userPassport = findByPassport(passport);
+        List<Account> userAccounts = users.get(userPassport);
+        for (Account a : userAccounts) {
+            if (a.equals(requisite)) {
+                account = a;
+            }
+        }
+        return account;
+    }
 
 }
