@@ -8,15 +8,17 @@ public class UserStore {
                 name = user;
                 break;
             }
-        }
-        if (name == null) {
-            throw new UserNotFoundException("User not found exception");
+            if (name == null) {
+                throw new UserNotFoundException("User not found exception");
+            }
         }
         return name;
     }
 
-    public static boolean validate(User user) throws UserInvalidException {
-        if (user.getUsername().length() <= 3 || !user.isValid()) {
+
+    public static boolean validate(User user) throws UserInvalidException
+    {
+        if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException("User is not valid");
         }
         return true;
@@ -25,9 +27,9 @@ public class UserStore {
     public static void main(String[] args) {
         try {
             User[] users = {
-                    new User("Evgen Nadeev", true)
+                    new User("Roman", true)
             };
-            User user = findUser(users, "Evgen Nadeev");
+            User user = findUser(users, "Roman");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }

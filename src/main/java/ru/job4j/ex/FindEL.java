@@ -11,13 +11,13 @@ public class FindEL extends Exception {
                 break;
             }
         }
-            if (rsl == -1) {
-                throw new ElementNotFoundException("Element not found");
-            }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Element not found");
+        }
         return rsl;
     }
 
-    public static void main(String[] args) throws ElementNotFoundException {
+    public static void main(String[] args)  {
         String[] value = {"Petr", "Pavel", "Roman"};
         try {
             indexOf(value, "Roman");
