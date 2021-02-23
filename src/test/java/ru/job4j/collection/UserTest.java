@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -17,13 +18,12 @@ public class UserTest {
     public void compareTo() {
         Set<User> users = new TreeSet<>();
         users.add(new User("Roman", 20));
-        users.add(new User("Roman", 21));
+        users.add(new User("Roman1", 21));
         Iterator<User> it = users.iterator();
 
-        assertThat(it.next(), is(new User("Roman", 21)));
         assertThat(it.next(), is(new User("Roman", 20)));
+        assertThat(it.next(), is(new User("Roman1", 21)));
     }
-
 
     @Test
     public void whenComparePertVSIvan() {
@@ -33,4 +33,13 @@ public class UserTest {
                 );
         assertThat(rsl, greaterThan(0));
     }
-}
+
+    @Test
+    public void whenCompareRomanVSRetr() {
+        int rsl = new User("Roman", 30)
+                .compareTo(
+                        new User("Retr", 20)
+                );
+        assertThat(rsl, greaterThan(0));
+    }
+    }
