@@ -18,8 +18,9 @@ public class DeleteAction implements UserAction {
         boolean rsl = tracker.deleted(id);
         if (rsl) {
             out.println("Successful");
-        } else
+        } else {
             out.println("Not successful");
+        }
         return true;
     }
 }

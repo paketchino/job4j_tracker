@@ -8,6 +8,7 @@ public class FindNameAction implements UserAction {
     public FindNameAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Find Name Action";

@@ -18,7 +18,6 @@ public class Item implements Comparator<Item>   {
         this.name = name;
     }
 
-
     public void setId(int id) {
         this.id = id;
     }
@@ -37,7 +36,7 @@ public class Item implements Comparator<Item>   {
 
     @Override
     public String toString() {
-        return new StringJoiner(", " , Item.class.getSimpleName() + "[" , "]")
+        return new StringJoiner(", ", Item.class.getSimpleName() + "[", "]")
                 .add("id= " + id)
                 .add("name=' " + name + "'")
                 .toString();
@@ -45,11 +44,15 @@ public class Item implements Comparator<Item>   {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
-        return id == item.id &&
-                Objects.equals(name, item.name);
+        return id == item.id
+                && Objects.equals(name, item.name);
     }
 
     @Override
