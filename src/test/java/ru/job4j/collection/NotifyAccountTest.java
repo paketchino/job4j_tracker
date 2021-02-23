@@ -1,5 +1,7 @@
 package ru.job4j.collection;
 
+import ru.job4j.collection.Account;
+import ru.job4j.collection.NotifyAccount;
 import org.junit.Test;
 
 import java.util.*;
@@ -23,6 +25,7 @@ public class NotifyAccountTest {
         );
         assertThat(NotifyAccount.sent(accounts), is(except));
     }
+
     @Test
     public void checkDelete() {
         List<Account> accounts = Arrays.asList(
