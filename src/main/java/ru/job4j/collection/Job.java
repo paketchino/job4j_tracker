@@ -6,6 +6,10 @@ public class Job implements Comparable<Job> {
 
     private int priority;
 
+    public Job() {
+
+    }
+
     public Job(String name, int priority) {
         this.name = name;
         this.priority = priority;
@@ -21,10 +25,12 @@ public class Job implements Comparable<Job> {
 
     @Override
     public String toString() {
-        return "Job{" +
-                "name='" + name + '\'' +
-                ", priority=" + priority +
-                '}';
+        return "Job{"
+                + "name='"
+                + name + '\''
+                + ", priority="
+                + priority
+                + '}';
     }
 
     @Override
