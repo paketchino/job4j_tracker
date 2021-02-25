@@ -8,9 +8,8 @@ import java.util.List;
 public final class Tracker {
     private static Tracker instance = null;
 
-    private final List<Item> items = new ArrayList<>(100);
+    private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-    private int size = 0;
 
     private Tracker() {
     }
@@ -28,9 +27,8 @@ public final class Tracker {
          * через setId проставляется ключ
          * ids используется для регенерации нового ключа
          */
-        int index = 0;
         item.setId(ids++);
-        items.set(size++, items.get(index));
+        items.add(item);
         return item;
     }
 
