@@ -13,9 +13,9 @@ public class OrderConvertTest {
 
     @Test
     public void process() {
-       List< Order> result = new ArrayList<>();
-       result.add(new Order("3fse", "Dress"));
-       HashMap<String, Order> map = OrderConvert.process(result);
-       assertThat(map.get("3fse"), is(new Order("3fse" ,"Dress")));
+            List<Order> orders = new ArrayList<>();
+            orders.add(new Order("Dress", "3sfe"));
+            HashMap<String, Order> map = OrderConvert.process(orders);
+            assertThat(map.get("3sfe"), is(new Order("Dress", "3sfe")));
     }
 }
