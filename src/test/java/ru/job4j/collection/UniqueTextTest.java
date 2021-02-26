@@ -20,4 +20,11 @@ public class UniqueTextTest {
         String duplicate = "Her dogs eat meat";
         assertThat(UniqueText.isEquals(origin, duplicate), is(false));
     }
+
+    @Test
+    public void isNotEquals2() {
+        String origin = "My cat eats a mouse and milk";
+        String duplicate = "My dog eats milk and a mouse";
+        assertThat(UniqueText.isEquals(origin, duplicate), is(false));
+    }
 }

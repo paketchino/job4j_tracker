@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class UniqueText {
     public static boolean isEquals(String originText, String duplText) {
-        boolean rsl = false;
+        boolean rsl = true;
         String[] origin = originText.split(" ");
         String[] text = duplText.split(" ");
         HashSet<String> check = new HashSet<>();
@@ -12,8 +12,9 @@ public class UniqueText {
             check.add(originalText);
         }
         for (String dupliT: text) {
-            if (check.contains(dupliT)) {
-                rsl = true;
+            if (!check.contains(dupliT)) {
+                rsl = false;
+                break;
             }
         }
 
