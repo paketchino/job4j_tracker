@@ -1,5 +1,5 @@
 package ru.job4j.collection;
-
+//
 import ru.job4j.collection.StringCompare;
 import org.junit.Test;
 
