@@ -8,7 +8,7 @@ public class Account {
    }
 
     public void addMoney(int money) {
-        if(money > 0) {
+        if (money > 0) {
             balance += money;
         }
     }

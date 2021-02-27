@@ -1,4 +1,4 @@
-package condition;
+package ru.job4j.condition;
 
 public class TriangleMatrix {
     public static int[][] rows(int count) {

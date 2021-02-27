@@ -1,4 +1,4 @@
-package condition;
+package ru.job4j.condition;
 
 public class OddPrint {
     public static void print(int[] array) {

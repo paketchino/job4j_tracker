@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         LinkedList<Person> people = new LinkedList<>();
         Person person = new Person("Roman");
-        Person person1 =new Person("Evgenya");
+        Person person1 = new Person("Evgenya");
         Person person3 = new Person("Water");
 
         people.add(person);

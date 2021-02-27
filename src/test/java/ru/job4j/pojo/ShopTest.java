@@ -24,7 +24,7 @@ public class ShopTest {
         products[1] = new Product("Milk", 2);
 
         int rsl = Shop.indexOfNull(products);
-        assertThat(rsl,is(0));
+        assertThat(rsl, is(0));
     }
 
     @Test

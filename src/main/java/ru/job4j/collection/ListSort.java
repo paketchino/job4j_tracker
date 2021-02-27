@@ -7,18 +7,15 @@ import java.lang.Integer.*;
 
 public class ListSort {
     public static void main(String[] args) {
-
         String roman = "Roman";
         String evgen = "Evgen";
         int rslStr = roman.compareTo(evgen);
         System.out.println(rslStr);
 
-
         List<Integer> list = Arrays.asList(5, 3, 4, 1, 2);
         System.out.println(list);
         Collections.sort(list);
         System.out.println(list);
-
 
         List<Integer> list1 = Arrays.asList(5, 3, 4, 1, 2);
         System.out.println(list1);

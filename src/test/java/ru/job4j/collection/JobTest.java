@@ -51,7 +51,6 @@ public class JobTest {
         assertThat(rsl, greaterThan(0));
     }
 
-
     @Test
     public void sortByPriorityAndNameIncrease() {
         Comparator<Job> cmdNam = new JobAscByPriority().thenComparing(new JobAscByName());

@@ -16,11 +16,12 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu");
         assertThat(selected, is(1));
     }
+
     @Test
     public void whenInvalidMultiple() {
         Output output = new StubOutput();
         Input in = new StubInput(
-                new String[] {"1", "1","1"}
+                new String[] {"1", "1", "1"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selected = input.askInt("Enter menu");
@@ -28,7 +29,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void whenInvalidNegative(){
+    public void whenInvalidNegative() {
         Output output = new StubOutput();
         Input in = new StubInput(
                 new String[] {"-1"}

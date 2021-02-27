@@ -14,6 +14,7 @@ public class BankServiceTest {
         bank.add(user);
         assertThat(bank.findByPassport("3fgs"), is(user));
     }
+
     @Test
     public void findByPassport() {
         User user1 = new User("3fgs", "Roman");
@@ -25,6 +26,7 @@ public class BankServiceTest {
         bankService.add(user3);
         assertThat(bankService.findByPassport("3fgs"), is(user1));
     }
+
     @Test
     public void addAccount() {
         User user = new User("3fgs", "Roman");
@@ -33,6 +35,7 @@ public class BankServiceTest {
         bankService.addAccount(user.getPassport(), new Account(150D, "5546"));
         assertThat(bankService.findByRequisite("3fgs", "5546").getBalance(), is(150D));
     }
+
     @Test
     public void whenInvalidPassport() {
         User user = new User("3fgs", "Roman");
@@ -41,23 +44,25 @@ public class BankServiceTest {
         bankService.addAccount(user.getPassport(), new Account(150D, "5546"));
         assertNull(bankService.findByRequisite("3f", "5546"));
     }
+
     @Test
     public void add2Accounts() {
         User user = new User("3fgs", "Roman");
         BankService bankService = new BankService();
         bankService.add(user);
-        bankService.addAccount(user.getPassport(), new Account(150D,"1111"));
+        bankService.addAccount(user.getPassport(), new Account(150D, "1111"));
         bankService.addAccount(user.getPassport(), new Account(300D, "1222"));
         assertThat(bankService.findByRequisite("3fgs", "1222").getBalance(), is(300D));
     }
+
     @Test
     public void transferMoney() {
         User user = new User("3fgs", "Roman");
         BankService bankService = new BankService();
         bankService.add(user);
         bankService.addAccount(user.getPassport(), new Account(150D, "123"));
-        bankService.addAccount(user.getPassport(),new Account(50D, "4576"));
-        bankService.transferMoney(user.getPassport(), "123", user.getPassport(), "4576",150D);
+        bankService.addAccount(user.getPassport(), new Account(50D, "4576"));
+        bankService.transferMoney(user.getPassport(), "123", user.getPassport(), "4576", 150D);
         assertThat(bankService.findByRequisite(user.getPassport(), "4576").getBalance(), is(200D));
     }
 

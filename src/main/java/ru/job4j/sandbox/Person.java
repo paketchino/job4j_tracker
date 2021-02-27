@@ -13,8 +13,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "names='" + names + '\'' +
-                '}';
+        return "Person{"
+                + "names='"
+                + names
+                + '\''
+                + '}';
     }
 }

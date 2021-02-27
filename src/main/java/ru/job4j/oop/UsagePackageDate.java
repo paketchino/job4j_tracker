@@ -5,7 +5,6 @@ import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class UsagePackageDate {
     public static void main(String[] args) {
         LocalDate currentDate = LocalDate.now();

@@ -15,7 +15,7 @@ public class ConvertMatrix2ListTest {
     public void when2on2ArrayThenList() {
         ConvertMatrix2List convertMatrix2List = new ConvertMatrix2List();
         int[][] input = {
-                {1, 2,},
+                {1, 2},
                 {3, 4}
         };
         List<Integer> expect = Arrays.asList(1, 2, 3, 4);

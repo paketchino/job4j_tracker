@@ -2,11 +2,11 @@ package ru.job4j.io;
 
 import java.util.Scanner;
 
+public class NumberMatchers {
 
-public class numberMatchers {
     private int matchers;
 
-    public numberMatchers(int matchers) {
+    public NumberMatchers(int matchers) {
         this.matchers = matchers;
     }
 
@@ -17,9 +17,10 @@ public class numberMatchers {
     public void setMatchers(int matchers) {
         this.matchers = matchers;
     }
-    public numberMatchers numberMatchers(int matchers) {
+
+    public NumberMatchers numberMatchers(int matchers) {
         Scanner input = new Scanner(System.in);
-        matchers-= Integer.valueOf(input.nextLine());
+        matchers -= Integer.valueOf(input.nextLine());
         return numberMatchers(11);
     }
 }

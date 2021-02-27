@@ -11,7 +11,6 @@ public final class LiquidationProduct  {
         return 90;
     }
 
-
     public String label() {
         return null;
     }

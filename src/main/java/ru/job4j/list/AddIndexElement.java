@@ -1,10 +1,10 @@
-package ru.job4j.List;
+package ru.job4j.list;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddIndexElement {
-    public static boolean addNewElement(List<String> list, int index, String str){
+    public static boolean addNewElement(List<String> list, int index, String str) {
         List<String> check = new ArrayList<>(list);
         boolean rsl = false;
         if (!list.contains(str)) {

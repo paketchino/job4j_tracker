@@ -4,12 +4,11 @@ import java.util.Date;
 
 public class College {
     public static void main(String[] args) {
-        Student student = new Student();
-        student.setGroup("16nGN2");
-        student.setName("Roman");
-        student.setReceipt(new Date());
+        Student s = new Student();
+        s.setGroup("16nGN2");
+        s.setName("Roman");
+        s.setReceipt(new Date());
 
-
-        System.out.println(student.getGroup() + " " + student.getName() + " " + student.getReceipt());
+        System.out.println(s.getGroup() + " " + s.getName() + " " + s.getReceipt());
     }
 }

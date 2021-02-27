@@ -1,4 +1,4 @@
-package condition;
+package ru.job4j.condition;
 
 public class EvenPrint {
     public static void print(int[] array) {
@@ -10,6 +10,6 @@ public class EvenPrint {
     }
 
     public static void main(String[] args) {
-        EvenPrint.print( new int[]{1, 2, 3, 4});
+        EvenPrint.print(new int[]{1, 2, 3, 4});
     }
 }

@@ -28,8 +28,8 @@ public final class Airbus {
 
     @Override
     public String toString() {
-        return "Airbus{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Airbus{" + "name='"
+                + name + '\''
+                + '}';
     }
 }

@@ -1,6 +1,7 @@
-package ru.job4j.List;
+package ru.job4j.list;
 
 import org.junit.Test;
+import ru.job4j.CheckAhdGetter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@ public class DivByZero {
         if (second == 0) {
             System.out.println("Div by 0, return def value -1");
         } else {
-            rsl = first/ second;
+            rsl = first / second;
         }
         return rsl;
     }

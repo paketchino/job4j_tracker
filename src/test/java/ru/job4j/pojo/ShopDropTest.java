@@ -15,7 +15,7 @@ public class ShopDropTest {
         products[1] = new Product("Bread", 4);
         Product[] rsl = ShopDrop.leftShift(products, 0);
         assertThat(rsl[0].getName(), is("Bread"));
-        assertThat(rsl[1],is(nullValue()));
+        assertThat(rsl[1], is(nullValue()));
     }
 
     @Test
@@ -25,6 +25,6 @@ public class ShopDropTest {
         products[1] = new Product("Bread", 4);
         Product[] rsl = ShopDrop.leftShift(products, 1);
         assertThat(rsl[0].getName(), is("Milk"));
-        assertThat(rsl[1],is(nullValue()));
+        assertThat(rsl[1], is(nullValue()));
     }
 }

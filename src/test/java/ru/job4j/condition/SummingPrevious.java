@@ -1,4 +1,4 @@
-package condition;
+package ru.job4j.condition;
 
 public class SummingPrevious {
     public static int[] calculate(int a, int b, int n) {

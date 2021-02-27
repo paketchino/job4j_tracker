@@ -14,7 +14,6 @@ public class UserPackageDate {
         LocalDateTime currentDateTime = LocalDateTime.now();
         System.out.println(currentDateTime);
 
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String currentDataTimeFormat = currentDateTime.format(formatter);
         System.out.println("Current data time of formatter " + currentDataTimeFormat);

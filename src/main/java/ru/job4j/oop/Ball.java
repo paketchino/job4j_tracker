@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
 public class Ball {
-    public void tryRun(GrandDadMum ball){}
+    public void tryRun(GrandDadMum ball) {
+        System.out.println(ball);
+    }
 }

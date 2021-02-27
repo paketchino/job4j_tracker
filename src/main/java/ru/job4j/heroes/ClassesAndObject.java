@@ -14,19 +14,20 @@ public class ClassesAndObject {
     }
 }
 
-class Person{
+class Person {
+
      private String name;
      private int age;
-
-     public int calculateToRetirement(){
-         int years = 65 - age;
-         return years;
-     }
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
+
+     public int calculateToRetirement() {
+         int years = 65 - age;
+         return years;
+     }
 
     void speak() {
         System.out.println("My name is " + name + "," + " and me " + age);

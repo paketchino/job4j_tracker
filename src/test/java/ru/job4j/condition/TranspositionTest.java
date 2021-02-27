@@ -1,4 +1,4 @@
-package condition;
+package ru.job4j.condition;
 
 import org.junit.Test;
 
@@ -8,11 +8,11 @@ public class TranspositionTest {
 
     @Test
     public void whenSquare() {
-        int [][] input = {
+        int[][] input = {
                 {1, 2},
                 {3, 4}
         };
-        int [][] expect = {
+        int[][] expect = {
                 {1, 3},
                 {2, 4}
         };

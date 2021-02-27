@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
 public class Wolf {
-    public void tryEat(Ball wolf) {}
+    public void tryEat(Ball wolf) {
+        System.out.println(wolf);
+    }
 }

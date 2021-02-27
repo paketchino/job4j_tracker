@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Police {
     public static void main(String[] args) {
-        License license = new License();
-        license.setCode("1111");
-        license.setCreated(new Date());
-        license.setModel("Toyota");
-        license.setOwner("Prosto Roman");
+        License l = new License();
+        l.setCode("1111");
+        l.setCreated(new Date());
+        l.setModel("Toyota");
+        l.setOwner("Prosto Roman");
 
-        System.out.println(license.getOwner() + "has a car -  " + license.getModel() + " : " + license.getCode());
+        System.out.println(l.getOwner() + "has a car -  " + l.getModel() + " : " + l.getCode());
     }
 }
