@@ -85,7 +85,7 @@ public class BankService {
      * @param destPassport паспорт 2-ого пользователя
      * @param destRequisite реквизиты 2-ого пользователся
      * @param amount значение суммы которое нужно перевести
-     * @return возвращает true если srcAccount && destAccount && баланс srcAccount != null
+     * @return возвращает true если srcAccount, destAccount, баланс srcAccount != null
      * во всех остальных случаях возвращает false
      */
     public boolean transferMoney(String srcPassport, String srcRequisite, String destPassport,
