@@ -7,11 +7,9 @@ public class Departments {
     public static List<String> fillGaps(List<String> deps) {
         Set<String> tmp = new LinkedHashSet<>();
         for (String value : deps) {
-            String start = "";
+            String joiner = String.join("", value);
             for (String el : value.split("\"")) {
-                start += el;
-                start += "\"";
-                tmp.add(start);
+                tmp.add(joiner + "/" + el);
             }
         }
         return new ArrayList<>(tmp);
@@ -21,7 +19,7 @@ public class Departments {
         orgs.sort(Comparator.naturalOrder());
     }
 
-    public static void sortDesc(List<String> orgs) {
+    public static void sortDesc(List<String> orgs)   {
         orgs.sort(new SortByDesc());
     }
 }

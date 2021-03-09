@@ -66,4 +66,19 @@ public class ArticleTest {
                 is(false)
         );
     }
+    @Test
+    public void whenTextFalse() {
+        assertThat(Article.generateBy("a b c d", "Мой дядя мыл апельсин"), is(false));
+    }
+
+    @Test
+    public void whenTextTrue() {
+        assertThat(Article.generateBy("a b c d", "a"), is(true));
+    }
+
+    @Test
+    public void whenTextTr() {
+        assertThat(Article.generateBy("12345678", "56"), is(true));
+    }
+
 }
