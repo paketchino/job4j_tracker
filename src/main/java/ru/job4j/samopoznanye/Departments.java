@@ -7,9 +7,15 @@ public class Departments {
     public static List<String> fillGaps(List<String> deps) {
         Set<String> tmp = new LinkedHashSet<>();
         for (String value : deps) {
-            String joiner = String.join("", value);
-            for (String el : value.split("\"")) {
-                tmp.add(joiner + "/" + el);
+            String start = "";
+            for (String el : value.split("/")) {
+                if (start.equals("")) {
+                    start = el;
+                    tmp.add(start);
+                } else {
+                    String joiner = String.join("/", value);
+                    tmp.add(joiner);
+                }
             }
         }
         return new ArrayList<>(tmp);
@@ -20,6 +26,6 @@ public class Departments {
     }
 
     public static void sortDesc(List<String> orgs)   {
-        orgs.sort(new SortByDesc());
+        orgs.sort(new DepDescComp());
     }
 }

@@ -1,22 +1,13 @@
 package ru.job4j.sandbox;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Person> people = new LinkedList<>();
-        Person person = new Person("Roman");
-        Person person1 = new Person("Evgenya");
-        Person person3 = new Person("Water");
-
-        people.add(person);
-        people.add(person1);
-        people.add(person3);
-
-        Iterator<Person> iterator = people.iterator();
+        StringJoiner sj = new StringJoiner(":", "[", "]");
+        sj.add("George").add("Sally").add("Fred");
+        String desiredString = sj.toString();
+        System.out.println(desiredString);
     }
 }
