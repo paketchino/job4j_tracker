@@ -7,8 +7,8 @@ public class Article {
         boolean rsl = true;
         String or = origin.replaceAll("\\p{P}", "");
         String ln = line.replaceAll("\\p{P}", "");
-        String[] originText = or.split("");
-        String[] lineText = ln.split("");
+        String[] originText = or.split(" ");
+        String[] lineText = ln.split(" ");
         Set<String> hashSet = new HashSet<>();
         for (String o : originText) {
             hashSet.add(o);
