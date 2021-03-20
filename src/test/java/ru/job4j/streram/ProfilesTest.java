@@ -1,6 +1,9 @@
 package ru.job4j.streram;
 
 import org.junit.Test;
+import ru.job4j.collection.LexSort;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import static org.junit.Assert.assertThat;
@@ -22,4 +25,22 @@ public class ProfilesTest {
         ));
         assertThat(rsl, is(excepted));
     }
+
+    @Test
+    public void checkDuplicateList() {
+        Profiles profile = new Profiles();
+        List<Address> rsl = profile.collect(List.of(
+                new Profile(new Address("Penza", "Zalenya", 10, 5)),
+                new Profile(new Address("Moscow", "Talay", 445, 23)),
+                new Profile(new Address("Moscow", "Talay", 445, 23)),
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2))
+        ));
+        List<Address> excepted = profile.collect(List.of(
+                new Profile(new Address("Penza", "Zalenya", 10, 5)),
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2)),
+                new Profile(new Address("Moscow", "Talay", 445, 23))
+                ));
+        assertThat(rsl,is(excepted));
+    }
+
 }
