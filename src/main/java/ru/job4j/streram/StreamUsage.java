@@ -16,19 +16,24 @@ public class StreamUsage {
 
         @Override
         public String toString() {
-            return "Task{" +
-                    "name='" + name + '\'' +
-                    ", spent=" + spent +
-                    '}';
+            return "Task{"
+                    + "name='" + name + '\''
+                    + ", spent=" + spent
+                    + '}';
         }
     }
 
     public static void main(String[] args) {
-        List<Integer> numbers = List.of(-2, -1 ,1, 2, 3, 5, 6, 7, 8
+        List<Task> tasks = List.of(
+                new Task("Roman", 21),
+                new Task("Evgen", 22),
+                new Task("Petr", 32),
+                new Task("Bug", 31),
+                new Task("Bug", 40)
         );
-        List<Integer> date = numbers.stream().filter(
-                number -> number > 0
-        ).collect(Collectors.toList());
-        date.forEach(System.out::println);
+        tasks.stream()
+                .filter(task -> task.name.contains("Bug") && task.spent > 30)
+                .map(task -> task.name + " " + task.spent)
+                .forEach(System.out::println);
     }
 }

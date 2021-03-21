@@ -16,12 +16,12 @@ public class ProfilesTest {
         List<Address> rsl = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2))
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
         ));
         List<Address> excepted = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2))
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
         ));
         assertThat(rsl, is(excepted));
     }
@@ -33,14 +33,14 @@ public class ProfilesTest {
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2))
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
         ));
         List<Address> excepted = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323,2)),
+                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2)),
                 new Profile(new Address("Moscow", "Talay", 445, 23))
                 ));
-        assertThat(rsl,is(excepted));
+        assertThat(rsl, is(excepted));
     }
 
 }

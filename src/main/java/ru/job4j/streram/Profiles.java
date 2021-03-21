@@ -8,7 +8,7 @@ public class Profiles {
     /**
      * Метод принимает список, преобразует его, а затем
      * сортирует по String city удаляя дубликаты
-     * @param profiles список
+     * @param profiles список`
      * @return возвращает profiles
      */
     List<Address> collect(List<Profile> profiles) {

@@ -13,6 +13,5 @@ public class PassportOfficeTest {
         PassportOffice office = new PassportOffice();
         office.add(citizen);
         assertThat(office.get(citizen.getPassport()), is(citizen));
-
     }
 }

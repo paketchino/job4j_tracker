@@ -15,7 +15,7 @@ public class StudentsTest {
         Student student1 = new Student(1, "Roman");
         Student student2 = new Student(2, "Pavel");
         Student student3 = new Student(3, "Evgenya");
-        Student student4 = new Student(6,"Petrov");
+        Student student4 = new Student(6, "Petrov");
         Map<String, Student> rsl = student.collect(List.of(student1, student2, student3, student4));
         Map<String, Student> excepted = Map.of(
                 "Roman", student1,
@@ -34,7 +34,7 @@ public class StudentsTest {
         Student st3 = new Student(3, "Evgenya");
         Student st4 = new Student(1, "Roman");
         Map<String, Student> rsl = student.collect(List.of(st1, st2, st3, st4));
-        Map<String,Student> excepted = Map.of(
+        Map<String, Student> excepted = Map.of(
                 "Roman", st1,
                 "Pavel", st2,
                 "Evgenya", st3
