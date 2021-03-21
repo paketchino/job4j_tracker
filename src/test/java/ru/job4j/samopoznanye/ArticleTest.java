@@ -82,7 +82,7 @@ public class ArticleTest {
 
     @Test
     public void whenTextTr() {
-        assertThat(Article.generateBy("12345678", "56"), is(true));
+        assertThat(Article.generateBy("1234 56 78", "56"), is(true));
     }
 
 }
