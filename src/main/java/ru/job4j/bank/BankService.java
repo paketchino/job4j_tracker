@@ -47,15 +47,11 @@ public class BankService {
      * то метод прекращает свое выполнение
      */
     public User findByPassport(String passport) {
-        User userPassport = findByPassport(passport);
-        if (userPassport != null) {
             return users.keySet()
                     .stream()
                     .filter(u -> u.getPassport().equals(passport))
                     .findFirst()
                     .orElse(null);
-        }
-        return null;
     }
 
     /**
