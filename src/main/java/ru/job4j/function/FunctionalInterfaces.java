@@ -1,5 +1,5 @@
 package ru.job4j.function;
-
+//
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Map;
 public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
-        BiConsumer<Integer, String> biConsumer = (i, s) -> map.put(i, s);
+        BiConsumer<Integer, String> biConsumer = map::put;
         map.put(1, "one");
         map.put(2, "two");
         map.put(3, "three");
@@ -25,8 +25,8 @@ public class FunctionalInterfaces {
         }
 
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
-        Consumer<String> consumer = (s) -> System.out.println(s);
-        Function<String, String> function = (s) -> s.toUpperCase();
+        Consumer<String> consumer = System.out::println;
+        Function<String, String> function = String::toUpperCase;
         for (String s : map.values()) {
             function.apply(s);
         }
