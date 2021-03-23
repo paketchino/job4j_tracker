@@ -13,12 +13,12 @@ public class NotifyAccountTest {
 
     @Test
     public void sent() {
-        List<Account> accounts = Arrays.asList(
+        List<Account> accounts = List.of(
                 new Account("Ivan", "5614 242418", "eDer3432f"),
                 new Account("Roman", "5462 31233", "fRtgt3457g")
         );
         HashSet<Account> except = new HashSet<>(
-                Arrays.asList(
+                List.of(
                         new Account("Ivan", "5614 242418", "eDer3432f"),
                         new Account("Roman", "5462 31233", "fRtgt3457g")
                 )
@@ -28,13 +28,13 @@ public class NotifyAccountTest {
 
     @Test
     public void checkDelete() {
-        List<Account> accounts = Arrays.asList(
+        List<Account> accounts = List.of(
                 new Account("Ivan", "5614 242418", "eDer3432f"),
                 new Account("Roman", "5462 31233", "fRtgt3457g"),
                 new Account("Roman", "5462 31233", "fRtgt3457g")
         );
         HashSet<Account> expected = new HashSet<>(
-                Arrays.asList(
+                List.of(
                     new Account("Ivan", "5614 242418", "eDer3432f"),
                     new Account("Roman", "5462 31233", "fRtgt3457g")
         ));
