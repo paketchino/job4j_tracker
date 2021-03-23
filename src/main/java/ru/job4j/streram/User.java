@@ -69,15 +69,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "Builder{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", activated=" + activated +
-                ", gender='" + gender + '\'' +
-                '}';
+        return "Builder{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", age=" + age
+                + ", login='" + login + '\''
+                + ", password='" + password + '\''
+                + ", activated=" + activated
+                + ", gender='" + gender + '\''
+                + '}';
     }
 
     public static void main(String[] args) {

@@ -11,10 +11,10 @@ public class Card {
         this.value = value;
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Stream.of(Suit.values()).
-                flatMap(suit -> Stream.of(Value.values()))
-                .map(value -> suit + " " + value)
+                flatMap(suit -> Stream.of(Value.values())
+                .map(value -> suit + " " + value))
                 .forEach(System.out::println);
 
     }

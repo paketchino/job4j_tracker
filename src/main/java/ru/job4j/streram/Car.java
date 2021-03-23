@@ -47,6 +47,7 @@ public class Car {
             this.suspension = suspension;
             return this;
         }
+
         Builder builderExhaust(String exhaust) {
             this.exhaust = exhaust;
             return this;
@@ -66,15 +67,15 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "wheels=" + wheels +
-                ", engine='" + engine + '\'' +
-                ", transmission='" + transmission + '\'' +
-                ", steering='" + steering + '\'' +
-                ", carBody='" + carBody + '\'' +
-                ", suspension='" + suspension + '\'' +
-                ", exhaust='" + exhaust + '\'' +
-                '}';
+        return "Car{"
+                + "wheels=" + wheels
+                + ", engine='" + engine + '\''
+                + ", transmission='" + transmission + '\''
+                + ", steering='" + steering + '\''
+                + ", carBody='" + carBody + '\''
+                + ", suspension='" + suspension + '\''
+                + ", exhaust='" + exhaust + '\''
+                + '}';
     }
 
     public static void main(String[] args) {
