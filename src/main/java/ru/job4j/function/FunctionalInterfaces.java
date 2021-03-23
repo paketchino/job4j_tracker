@@ -25,10 +25,10 @@ public class FunctionalInterfaces {
         }
 
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
-        Consumer<String> consumer = System.out::println;
         Function<String, String> function = String::toUpperCase;
+        Consumer<String> consumer = System.out::println;
         for (String s : map.values()) {
-            function.apply(s);
+            consumer.accept(s);
         }
     }
 }
