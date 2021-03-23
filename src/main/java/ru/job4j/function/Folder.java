@@ -1,5 +1,5 @@
 package ru.job4j.function;
-
+//
 import java.util.Objects;
 
 public class Folder {
