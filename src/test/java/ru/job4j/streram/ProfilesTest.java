@@ -12,13 +12,13 @@ import static org.hamcrest.core.Is.is;
 public class ProfilesTest {
     @Test
     public void whenCreateList() {
-        Profiles profile = new Profiles();
-        List<Address> rsl = profile.collect(List.of(
+        var profile = new Profiles();
+        var rsl = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
         ));
-        List<Address> excepted = profile.collect(List.of(
+        var excepted = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
@@ -28,14 +28,14 @@ public class ProfilesTest {
 
     @Test
     public void checkDuplicateList() {
-        Profiles profile = new Profiles();
-        List<Address> rsl = profile.collect(List.of(
+        var profile = new Profiles();
+        var rsl = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
         ));
-        List<Address> excepted = profile.collect(List.of(
+        var excepted = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2)),
                 new Profile(new Address("Moscow", "Talay", 445, 23))
