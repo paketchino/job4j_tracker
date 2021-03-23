@@ -9,11 +9,11 @@ public class PriorityQueueTest {
 
     @Test
     public void whenHigherPriority() {
-         PriorityQueue priorityQueue = new PriorityQueue();
+         var priorityQueue = new PriorityQueue();
          priorityQueue.put(new Task("low", 5));
          priorityQueue.put(new Task("middle", 3));
          priorityQueue.put(new Task("urgent", 1));
-         Task result = priorityQueue.take();
+         var result = priorityQueue.take();
          assertThat(result.getDesc(), is("urgent"));
     }
 
