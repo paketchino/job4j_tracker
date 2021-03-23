@@ -1,5 +1,5 @@
 package ru.job4j.lambda;
-
+//
 import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.ArrayList;
