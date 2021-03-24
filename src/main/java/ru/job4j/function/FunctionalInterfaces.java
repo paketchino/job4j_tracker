@@ -23,12 +23,11 @@ public class FunctionalInterfaces {
                 System.out.println("key: " + i + " value: " + map.get(i));
             }
         }
-
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
         Function<String, String> function = String::toUpperCase;
         Consumer<String> consumer = System.out::println;
         for (String s : map.values()) {
-            consumer.accept(s);
+            consumer.accept(function.apply(s));
         }
     }
 }
