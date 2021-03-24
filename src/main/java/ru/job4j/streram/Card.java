@@ -1,5 +1,5 @@
 package ru.job4j.streram;
-
+//
 import java.util.stream.Stream;
 
 public class Card {
@@ -16,6 +16,5 @@ public class Card {
                 flatMap(suit -> Stream.of(Value.values())
                 .map(value -> suit + " " + value))
                 .forEach(System.out::println);
-
     }
 }
