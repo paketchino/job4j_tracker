@@ -46,9 +46,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "passport='" + passport + '\'' +
-                ", username='" + username + '\'' +
-                '}';
+        return "User{"
+                + "passport='" + passport + '\''
+                + ", username='" + username + '\''
+                + '}';
     }
 }
