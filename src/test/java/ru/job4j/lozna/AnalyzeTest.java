@@ -74,4 +74,15 @@ public class AnalyzeTest {
         );
         assertThat(bestSt, is(new Tuple("Sergey", 149D)));
     }
+
+    @Test
+    public void whenAverageScoreByPupil() {
+        List<Tuple> averStr = Analyze.averageScoreByPupil(
+                List.of(
+                        new Pupil("Ivanov", List.of(new Subject("Math", 90))),
+                        new Pupil("Sergey", List.of(new Subject("Math", 70)))
+                ).stream()
+        );
+        assertThat(averStr, is(80));
+    }
 }
