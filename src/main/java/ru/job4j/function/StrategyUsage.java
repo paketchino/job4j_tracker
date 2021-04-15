@@ -1,5 +1,7 @@
 package ru.job4j.function;
 
+import java.util.function.*;
+
 public class StrategyUsage {
     public boolean empty(String s) {
         return check(str -> str.isEmpty(), s);

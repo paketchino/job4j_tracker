@@ -1,10 +1,13 @@
 package ru.job4j.function;
 
-import ru.job4j.tracker.StubOutput;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import java.util.function.BiConsumer;
+import java.util.function.*;
+
 
 public class FunctionInterfaceUsage {
     public static void main(String[] args) {

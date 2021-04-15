@@ -9,7 +9,7 @@ public class StudentLevelExample {
     public List<Student> levelOf(List<Student> students, int bound) {
         return students
                 .stream()
-                .flatMap(t -> Stream.ofNullable(t))
+                .flatMap(student -> Stream.ofNullable(student))
                 .sorted()
                 .filter(student -> student.getScore() > bound)
                 .collect(Collectors.toList());

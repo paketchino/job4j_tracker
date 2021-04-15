@@ -1,7 +1,7 @@
 package ru.job4j.function;
 //
 import org.junit.Test;
-
+import java.util.function.*;
 import java.util.ArrayList;
 import java.util.List;
 

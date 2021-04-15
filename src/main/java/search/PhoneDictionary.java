@@ -1,8 +1,8 @@
 package search;
-//
-import ru.job4j.function.Predicate;
+
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class PhoneDictionary {
     private ArrayList<Person> persons = new ArrayList<Person>();
