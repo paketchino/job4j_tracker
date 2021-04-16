@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 import java.util.function.BiConsumer;
 import java.util.function.*;
 
-
 public class FunctionInterfaceUsage {
     public static void main(String[] args) {
         Supplier<String> sup = () -> "New String for Interface";

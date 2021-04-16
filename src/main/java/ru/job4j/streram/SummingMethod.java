@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 
 public class SummingMethod {
 
-    public static class User
-    {
+    public static class User {
         private String name;
 
         private List<Bill> bills = new ArrayList<>();
@@ -27,9 +26,8 @@ public class SummingMethod {
         }
     }
 
+    public static class Bill {
 
-    public static class Bill
-    {
         private int balance;
 
         public Bill(int balance) {
@@ -41,8 +39,7 @@ public class SummingMethod {
         }
     }
 
-    private static class Pair
-    {
+    private static class Pair {
         private Bill bill;
         private User user;
 
@@ -60,8 +57,7 @@ public class SummingMethod {
         }
     }
 
-    public static Map<String, Integer> summing(List<User> users)
-    {
+    public static Map<String, Integer> summing(List<User> users) {
         return users.stream()
                 .collect(Collectors.groupingBy(User::getName,
                         Collectors

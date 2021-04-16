@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 
 public class OptionalFlatMap {
 
-    public static Optional<Integer> flatMap(List<String> strings)
-    {
+    public static Optional<Integer> flatMap(List<String> strings) {
         return strings
                 .stream()
                 .filter(st -> st.endsWith(".java"))

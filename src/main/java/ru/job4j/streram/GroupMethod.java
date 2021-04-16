@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 
 public class GroupMethod {
 
-    public static class User
-    {
+    public static class User {
         private String name;
         private int age;
 
@@ -27,11 +26,15 @@ public class GroupMethod {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             User user = (User) o;
-            return age == user.age &&
-                    Objects.equals(name, user.name);
+            return age == user.age
+                    && Objects.equals(name, user.name);
         }
 
         @Override
@@ -41,15 +44,14 @@ public class GroupMethod {
 
         @Override
         public String toString() {
-            return "User{" +
-                    "name='" + name + '\'' +
-                    ", age=" + age +
-                    '}';
+            return "User{"
+                    + "name='" + name + '\''
+                    + ", age=" + age
+                    + '}';
         }
     }
 
-    public static Map<Integer, List<User>> groupBy(List<User> users)
-    {
+    public static Map<Integer, List<User>> groupBy(List<User> users) {
         return users.stream().collect(Collectors.groupingBy(
                 User::getAge
         ));

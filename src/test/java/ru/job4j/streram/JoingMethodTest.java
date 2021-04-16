@@ -20,7 +20,7 @@ public class JoingMethodTest {
         expect.add("C");
         assertEquals(expect.toString(), JoingMethod.join(
                 List.of(
-                        "A","B","C"
+                        "A", "B", "C"
                 ))
         );
     }

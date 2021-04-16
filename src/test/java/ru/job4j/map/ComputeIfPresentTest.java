@@ -8,7 +8,6 @@ import java.util.Map;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 public class ComputeIfPresentTest {
     @Test
     public void checkComputeIfPresent() {

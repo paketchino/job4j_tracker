@@ -8,7 +8,6 @@ import java.util.Map;
 import static org.junit.Assert.*;
 import static ru.job4j.streram.CountinMethod.*;
 
-
 public class CountinMethodTest {
 
     @Test
@@ -33,6 +32,8 @@ public class CountinMethodTest {
                 "Microsoft", 3L,
                 "Amazon", 1L
         );
-        assertEquals(result, CountinMethod.groupAndCount(List.of(w1, w2, w3, w4, w5, w6, w7, w8,w9)));
+        assertEquals(result,
+                CountinMethod
+                        .groupAndCount(List.of(w1, w2, w3, w4, w5, w6, w7, w8, w9)));
     }
 }

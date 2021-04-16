@@ -59,6 +59,5 @@ public class OptinalFilter {
         return workers.stream()
                 .filter(w -> w.getPassport().equals(passport))
                 .findFirst();
-
     }
 }

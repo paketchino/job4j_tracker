@@ -14,8 +14,7 @@ public class SortedMethodTest {
     }
 
     @Test
-    public void reverseSorted()
-    {
+    public void reverseSorted() {
         assertEquals(List.of("c", "b", "a"), SortedMethod.sortedReverse(List.of("a", "b", "c")));
     }
 }

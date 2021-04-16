@@ -6,8 +6,7 @@ import java.util.stream.Collectors;
 
 public class DistinctForPrimitive {
 
-    public static List<Integer> collect(int[] date)
-    {
+    public static List<Integer> collect(int[] date) {
         return Arrays.stream(date)
                 .distinct()
                 .boxed()

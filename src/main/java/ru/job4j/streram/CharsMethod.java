@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CharsMethod
-{
+public class CharsMethod {
     public static List<Character> symbols(String string) {
         return string.chars().mapToObj(s -> (char) s).collect(Collectors.toList());
     }

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class PutContainsKey {
 
-    public static Map<Integer, User> addNewElementWithoutCheck(List<User>list) {
+    public static Map<Integer, User> addNewElementWithoutCheck(List<User> list) {
         Map<Integer, User> rsl = new HashMap<>();
         for (User u : list) {
             rsl.put(u.getId(), u);
@@ -15,7 +15,7 @@ public class PutContainsKey {
         return rsl;
     }
 
-    public static Map<Integer, User> addNewElementWithCheck(List<User>list) {
+    public static Map<Integer, User> addNewElementWithCheck(List<User> list) {
         Map<Integer, User> rsl = new HashMap<>();
         for (User u : list) {
             if (!rsl.containsKey(u.getId())) {
@@ -44,11 +44,15 @@ public class PutContainsKey {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             User user = (User) o;
-            return id == user.id &&
-                    Objects.equals(name, user.name);
+            return id == user.id
+                    && Objects.equals(name, user.name);
         }
 
         @Override

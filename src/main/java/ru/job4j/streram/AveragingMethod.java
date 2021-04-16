@@ -39,8 +39,7 @@ public class AveragingMethod {
         }
     }
 
-    public static Map<String, Double> averaging(List<Worker> workers)
-    {
+    public static Map<String, Double> averaging(List<Worker> workers) {
         return workers.stream().collect(Collectors
                 .groupingBy(worker -> worker.getCompany().getName(),
                         Collectors.averagingDouble(Worker::getAge)));

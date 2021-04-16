@@ -5,8 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class FindFirstMethod {
-    public static Optional<Integer> first(List<Integer> list)
-    {
+    public static Optional<Integer> first(List<Integer> list) {
         return list.stream().findFirst();
     }
 

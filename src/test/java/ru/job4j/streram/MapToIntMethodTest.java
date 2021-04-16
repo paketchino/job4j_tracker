@@ -23,6 +23,7 @@ public class MapToIntMethodTest {
                 })
         );
     }
+
         @Test
         public void test() {
             assertEquals(

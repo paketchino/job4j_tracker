@@ -22,7 +22,7 @@ public class TerminalMethodTest {
 
     @Test
     public void check() {
-        assertTrue(TerminalMethod.check(List.of("1234","abcd")));
+        assertTrue(TerminalMethod.check(List.of("1234", "abcd")));
         assertFalse(TerminalMethod.check(List.of("1234", "ab")));
     }
 

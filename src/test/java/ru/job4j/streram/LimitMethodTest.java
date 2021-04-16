@@ -12,14 +12,13 @@ public class LimitMethodTest {
     public void firstThree() {
         assertEquals(
                 List.of("A", "B", "C"),
-                LimitMethod.firstThree(List.of("A","B","C", "D","E"))
+                LimitMethod.firstThree(List.of("A", "B", "C", "D", "E"))
         );
     }
 
     @Test
-    public void lastThree()
-    {
+    public void lastThree() {
         assertEquals(List.of("C", "D", "E"),
-                LimitMethod.lastThree(List.of("A","B","C", "D","E")));
+                LimitMethod.lastThree(List.of("A", "B", "C", "D", "E")));
     }
 }

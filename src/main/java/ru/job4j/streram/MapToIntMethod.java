@@ -7,25 +7,21 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MapToIntMethod {
-    public static long sum(List<Character> list)
-    {
+    public static long sum(List<Character> list) {
         return list.stream().mapToInt(u -> (int) u).sum();
     }
 
-    public static List<Integer> boxed(int[] data)
-    {
+    public static List<Integer> boxed(int[] data) {
         return Arrays.stream(data)
                 .boxed()
                 .collect(Collectors.toList());
     }
 
-    public static int sum(int[][] matrix)
-    {
+    public static int sum(int[][] matrix) {
         return Arrays.stream(matrix).flatMapToInt(Arrays::stream).sum();
     }
 
-    public static List<Integer> flatMap(List<List<Integer>> lists)
-    {
+    public static List<Integer> flatMap(List<List<Integer>> lists) {
         return lists.stream().flatMap(subList -> subList.stream()).collect(Collectors.toList());
     }
 

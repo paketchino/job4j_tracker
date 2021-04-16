@@ -18,10 +18,10 @@ public class GroupMethodTest {
 
         Map<Integer, List<GroupMethod.User>> except = Map.of(
                 10, List.of(gr1, gr2),
-                30, List.of(gr3,gr4),
+                30, List.of(gr3, gr4),
                 50, List.of(gr5)
         );
-        assertEquals(except, GroupMethod.groupBy(List.of(gr1, gr2, gr3, gr4,gr5)));
+        assertEquals(except, GroupMethod.groupBy(List.of(gr1, gr2, gr3, gr4, gr5)));
 
     }
 }

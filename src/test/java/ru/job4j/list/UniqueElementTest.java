@@ -19,6 +19,7 @@ public class UniqueElementTest {
         boolean result = UniqueElement.checkList(list, "second");
         assertThat(result, is(true));
     }
+
     @Test
     public void checkListFalse() {
         List<String> list = new ArrayList<>();

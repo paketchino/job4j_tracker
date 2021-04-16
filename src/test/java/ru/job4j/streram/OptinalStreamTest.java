@@ -20,9 +20,12 @@ public class OptinalStreamTest {
         OptinalStream.PhoneNumber ph5 = new OptinalStream.PhoneNumber("+2 123 345 61 91");
 
         OptinalStream.User us1 = new OptinalStream.User(4, List.of(ph1, ph2, ph3, ph4));
-        OptinalStream.User us2 = new OptinalStream.User(1 ,List.of(ph5));
-        assertEquals("+7 123 345 61 91", OptinalStream.collectNmber(List.of(us1, us2), 4, "+7").get(0).getPhone());
+        OptinalStream.User us2 = new OptinalStream.User(1, List.of(ph5));
+        assertEquals("+7 123 345 61 91",
+                OptinalStream.collectNmber(List.of(us1, us2), 4, "+7")
+                        .get(0).getPhone());
     }
+
     @Test
     public void test2() {
         OptinalStream.PhoneNumber ph1 = new OptinalStream.PhoneNumber("+7 123 345 61 91");

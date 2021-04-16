@@ -9,8 +9,11 @@ import static org.junit.Assert.*;
 
 public class StreamOfMethodTest {
     @Test
-    public void WhenUserStreamMethod() {
-        assertEquals("abc", StreamOfMethod.createStream().map(o -> Objects.toString(o)).collect(Collectors.joining()));
+    public void whenUserStreamMethod() {
+        assertEquals("abc", StreamOfMethod
+                .createStream()
+                .map(Objects::toString)
+                .collect(Collectors.joining()));
     }
 
 }

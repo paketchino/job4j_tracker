@@ -13,7 +13,7 @@ public class CollectorAriphmetic {
         //сюда сложим элементы
         Supplier<List<Integer>> supplier = LinkedList::new;
         //говорим, как добавить элемент
-        BiConsumer<List<Integer>,Integer> consumer = List::add;
+        BiConsumer<List<Integer>, Integer> consumer = List::add;
         //просто нужно
         BinaryOperator<List<Integer>> merger = (xs, xy) -> {
             xs.addAll(xy);

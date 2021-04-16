@@ -18,6 +18,7 @@ public class OptinalFilterTest {
         OptinalFilter.Worker w1 = new OptinalFilter.Worker("1", List.of(c1, c2));
         OptinalFilter.Worker w2 = new OptinalFilter.Worker("2", List.of(c3));
         OptinalFilter.Worker w3 = new OptinalFilter.Worker("3", List.of(c4));
-        assertEquals(List.of(w1), OptinalFilter.defineChildren(List.of(w1, w2,w3), "1").size());
+        assertEquals(List.of(),
+                OptinalFilter.defineChildren(List.of(w1, w2, w3), "1"));
     }
 }

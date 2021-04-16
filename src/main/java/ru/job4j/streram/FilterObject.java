@@ -24,8 +24,7 @@ public class FilterObject {
         }
     }
 
-    public static List<User> filter (List<User> users)
-    {
+    public static List<User> filter(List<User> users) {
         return users.stream()
                 .filter(user -> user.getName().startsWith("B") && user.getAge() > 18)
                 .collect(Collectors.toList());

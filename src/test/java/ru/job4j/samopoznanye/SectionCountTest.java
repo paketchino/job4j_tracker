@@ -12,6 +12,7 @@ public class SectionCountTest {
         assertEquals(1, SectionCount.count(3, 2));
         assertEquals(2, SectionCount.count(4, 2));
     }
+
     @Test
     public void test1() {
         assertEquals(2, SectionCount.count(2, 1));

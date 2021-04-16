@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 public class OptinalStream {
 
-    public static class PhoneNumber
-    {
+    public static class PhoneNumber {
+
         private String phone;
 
         public PhoneNumber(String phone) {
@@ -18,9 +18,8 @@ public class OptinalStream {
         }
     }
 
+    public static class User {
 
-    public static class User
-    {
         private int id;
         private List<PhoneNumber> numbers;
 
@@ -38,8 +37,7 @@ public class OptinalStream {
         }
     }
 
-    public static List<PhoneNumber> collectNmber(List<User> users, int id, String region)
-    {
+    public static List<PhoneNumber> collectNmber(List<User> users, int id, String region) {
         return users.stream()
                 .filter(id1 -> id1.getId() == id)
                 .findFirst()

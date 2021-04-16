@@ -6,8 +6,7 @@ import java.util.stream.Collectors;
 
 public class SortedMethod {
 
-    public static List<String> sorted(List<String> strings)
-    {
+    public static List<String> sorted(List<String> strings) {
         return strings
                 .stream()
                 .sorted()

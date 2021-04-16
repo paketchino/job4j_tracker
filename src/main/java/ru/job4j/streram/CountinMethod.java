@@ -5,8 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class CountinMethod
-{
+public class CountinMethod {
     public static class Company {
         private String name;
 
@@ -19,9 +18,7 @@ public class CountinMethod
         }
     }
 
-
-    public static class Worker
-    {
+    public static class Worker {
 
         private int age;
 
@@ -42,11 +39,15 @@ public class CountinMethod
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Worker worker = (Worker) o;
-            return age == worker.age &&
-                    Objects.equals(company, worker.company);
+            return age == worker.age
+                    && Objects.equals(company, worker.company);
         }
 
         @Override

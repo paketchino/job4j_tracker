@@ -14,8 +14,7 @@ public class TakeWhileMethodTest {
     }
 
     @Test
-    public void dropWhile()
-    {
+    public void dropWhile() {
         assertEquals(List.of(1, 2, 3), TakeWhileMethod.dropWhile(List.of(3, 2, 1, -1, -2, -3)));
     }
 }

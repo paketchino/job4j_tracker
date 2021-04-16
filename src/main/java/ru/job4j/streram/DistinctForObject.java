@@ -6,8 +6,7 @@ import java.util.stream.Collectors;
 
 public class DistinctForObject {
 
-    public static class User
-    {
+    public static class User {
         private String name;
 
         private int age;
@@ -19,11 +18,15 @@ public class DistinctForObject {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             User user = (User) o;
-            return age == user.age &&
-                    Objects.equals(name, user.name);
+            return age == user.age
+                    && Objects.equals(name, user.name);
         }
 
         @Override
@@ -32,8 +35,7 @@ public class DistinctForObject {
         }
     }
 
-    public static List<User> collect(List<User> users)
-    {
+    public static List<User> collect(List<User> users) {
         return users.
                 stream()
                 .distinct()
