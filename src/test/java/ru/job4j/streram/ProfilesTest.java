@@ -38,10 +38,10 @@ public class ProfilesTest {
         Profile profile3 = new Profile(address3);
         Profile profile4 = new Profile(address4);
 
-        List<Profile> profiles = Arrays.asList(profile1, profile2, profile3, profile4);
-        List<Address> excepted = Arrays.asList(address3, address1, address2);
+        var profiles = Arrays.asList(profile1, profile2, profile3, profile4);
+        var excepted = Arrays.asList(address3, address1, address2);
         Profiles profiles1 = new Profiles();
-        List<Address> rsl = profiles1.collect(profiles);
+        var rsl = profiles1.collect(profiles);
         assertThat(rsl, is(excepted));
     }
 
