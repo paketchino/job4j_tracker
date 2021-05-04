@@ -28,19 +28,17 @@ public class ProfilesTest {
 
     @Test
     public void checkDuplicateList() {
-        var profile = new Profiles();
-        var rsl = profile.collect(List.of(
-                new Profile(new Address("Penza", "Zalenya", 10, 5)),
-                new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2))
-        ));
-        var excepted = profile.collect(List.of(
-                new Profile(new Address("Penza", "Zalenya", 10, 5)),
-                new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2)),
-                new Profile(new Address("Moscow", "Talay", 445, 23)),
-                new Profile(new Address("Moscow", "Talay", 445, 23))
-                ));
+        Address address1 = new Address("Penza", "Zalenya", 10, 5);
+        Address address2 = new Address("Sankt-Peterburg", "Konstatina", 323, 2);
+        Address address3 = new Address("Moscow", "Talay", 445, 23);
+        Address address4 = new Address("Moscow", "Talay", 445, 23);
+        Profile profile1 = new Profile(address1);
+        Profile profile2 = new Profile(address2);
+        Profile profile3 = new Profile(address3);
+        Profile profile4 = new Profile(address4);
+        Profiles profiles = new Profiles();
+        var rsl = profiles.collect(Arrays.asList(profile1, profile2, profile3, profile4));
+        var excepted = profiles.collect(Arrays.asList(profile1, profile2, profile3));
         assertThat(rsl, is(excepted));
     }
 }
