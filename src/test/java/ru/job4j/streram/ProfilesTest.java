@@ -38,6 +38,7 @@ public class ProfilesTest {
         var excepted = profile.collect(List.of(
                 new Profile(new Address("Penza", "Zalenya", 10, 5)),
                 new Profile(new Address("Sankt-Peterburg", "Konstatina", 323, 2)),
+                new Profile(new Address("Moscow", "Talay", 445, 23)),
                 new Profile(new Address("Moscow", "Talay", 445, 23))
                 ));
         assertThat(rsl, is(excepted));
