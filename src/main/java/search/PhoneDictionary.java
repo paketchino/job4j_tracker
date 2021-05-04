@@ -1,6 +1,5 @@
 package search;
 
-
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
@@ -12,11 +11,13 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> find(String key) {
-        Predicate<Person> combine = p -> p.getName().contains(key) || p.getSurname().contains(key)
-                || p.getPhone().contains(key) || p.getAddress().contains(key);
+        Predicate<Person> combine1 = p -> p.getName().contains(key);
+        Predicate<Person> combine2 = p -> p.getSurname().contains(key);
+        Predicate<Person> combine3 = p -> p.getPhone().contains(key);
+        Predicate<Person> combine4 = p -> p.getAddress().contains(key);
         var result = new ArrayList<Person>();
         for (Person person : persons) {
-            if (combine.test(person)) {
+            if (combine1.or(combine2).or(combine3).or(combine4).test(person)) {
                 result.add(person);
             }
         }
