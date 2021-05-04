@@ -30,6 +30,7 @@ public class RealizeFunctionTest {
         List<Double> excepted = List.of(243D, 729D, 2187D);
         assertThat(result, is(excepted));
     }
+
     @Test
     public void whenIndicativeV2() {
         List<Double> result = RealizeFunction.diapason(5, 8, x -> Math.pow(x, 3));

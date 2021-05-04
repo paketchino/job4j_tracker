@@ -34,8 +34,6 @@ public class BankService {
             if (!userAccount.contains(account)) {
                 userAccount.add(account);
             }
-        } else {
-            System.out.println("Account added");
         }
     }
 
@@ -60,9 +58,12 @@ public class BankService {
      */
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<User> userPassport = findByPassport(passport);
+        if (userPassport.isPresent()) {
             return users.get(userPassport.get())
                     .stream()
                     .filter(a -> a.getRequisites().equals(requisite)).findFirst();
+        }
+        return Optional.empty();
     }
 
     /**
