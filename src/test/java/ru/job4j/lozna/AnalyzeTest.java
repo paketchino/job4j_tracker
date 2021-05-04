@@ -8,6 +8,20 @@ import java.util.List;
 public class AnalyzeTest {
 
     @Test
+    public void whenListOfSubjectAverage() {
+        List<Tuple> average = Analyze.averageScoreByPupil(
+                List.of(
+                        new Pupil("Ivanov", List.of(new Subject("Math", 100), new Subject("Lang", 100))),
+                        new Pupil("Petrov", List.of(new Subject("Math", 60), new Subject("Lang", 60)))
+                ).stream()
+        );
+        assertThat(average, is(List.of(
+                new Tuple("Lang", 80D),
+                new Tuple("Math", 80D)
+        )));
+    }
+
+    @Test
     public void whenSinglePupil() {
         double average = Analyze.averageScore(
                 List.of(
