@@ -1,5 +1,5 @@
 package ru.job4j.streram;
-
+//
 import org.junit.Test;
 import ru.job4j.collection.LexSort;
 
@@ -42,5 +42,4 @@ public class ProfilesTest {
                 ));
         assertThat(rsl, is(excepted));
     }
-
 }
